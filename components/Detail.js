@@ -58,8 +58,8 @@ const Detail = () => {
 
   return (
     <div className="">
-      <ul className="flex">
-        <div className="bg-[#444343] w-3/5 m-auto">
+      <ul className="flex max-sm:inline-block">
+        <div className="bg-[#444343] w-3/5 m-auto max-sm:w-full">
           <h1 className="bg-[#002A3A] justify-center flex items-center uppercase text-white font-black h-11">
             {productDetails.category}
           </h1>
@@ -69,7 +69,7 @@ const Detail = () => {
             alt={productDetails.title}
           />
         </div>
-        <div className="w-2/5 bg-[#EFEFEF] p-14">
+        <div className="w-2/5 bg-[#EFEFEF] p-14 max-sm:w-full">
           <li className="font-medium capitalize text-xl">
             {productDetails.title}
           </li>
