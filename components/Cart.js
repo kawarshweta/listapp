@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons'
 
 const Cart = () => {
   const initialCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -83,7 +85,7 @@ const Cart = () => {
 
       {cart.map((item) => (
         <div
-          className="flex drop-shadow-md mb-3 h-28 border-b-4 justify-between max-md:inline-grid max-md:h-72 max-md:bg-gray-300 max-md:rounded-md max-md:mt-3"
+          className="flex drop-shadow-md mb-3 h-28 border-b-4 justify-between max-md:inline-grid max-md:h-72 max-md:bg-gray-200 max-md:rounded-md max-md:mt-3"
           key={item.id}
         >
           <div className="flex capitalize mt-3 w-80">
@@ -100,19 +102,19 @@ const Cart = () => {
           <p className="mt-3 max-md:mt-0">
             ${parseFloat(item.price).toFixed(2)}
           </p>{" "}
-          <div className="flex items-center mt-3 mb-16">
+          <div className="flex items-center mt-3 mb-16 mr-6">
             <button
               className="text-red-500 font-bold mr-2"
               onClick={() => decreaseQuantity(item.id)}
             >
-              -
+              <FontAwesomeIcon icon={faMinus} />
             </button>
             <p>{item.quantity || 1}</p>
             <button
               className="text-green-500 font-bold"
               onClick={() => increaseQuantity(item.id)}
             >
-              +
+            <FontAwesomeIcon icon={faPlus} />
             </button>
           </div>
           <div>
@@ -120,7 +122,7 @@ const Cart = () => {
               className="text-red-500 font-bold ml-32 max-md:ml-2"
               onClick={() => removeItem(item.id)}
             >
-              Delete
+            <FontAwesomeIcon className="text-red-600 mt-5 mr-2" icon={faTrash} />
             </button>
           </div>
         </div>
