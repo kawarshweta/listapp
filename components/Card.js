@@ -8,7 +8,7 @@ const Card = ({ filteredProducts }) => {
       .join(" ");
 
     return (
-      <ul className="card flex flex-wrap justify-center p-4">
+      <ul className="card flex flex-wrap justify-center p-4 max-sm:justify-start max-sm: w-96">
         <div className="p-8 rounded-md w-96 h-[450] justify-between bg-gray-200 mr-7 mb-10 cursor-pointer transition-all hover:scale-110">
           <img
             className="w-40 h-40 mix-blend-multiply m-auto"
